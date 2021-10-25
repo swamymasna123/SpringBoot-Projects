@@ -1,0 +1,35 @@
+#Table Creation::
+
+ CREATE TABLE EMPLOYEE
+ (
+ EID INT AUTO_INCREMENT PRIMARY KEY,
+ ENAME VARCHAR(200),
+ ESAL DOUBLE
+ );
+ 
+ #DESC::
+ 
+ mysql> DESC EMPLOYEE;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| EID   | int          | NO   | PRI | NULL    | auto_increment |
+| ENAME | varchar(200) | YES  |     | NULL    |                |
+| ESAL  | double       | YES  |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+
+INSERT QUERY TO CHECK IN DB::
+`````````````````````````````
+ INSERT INTO EMPLOYEE(ENAME,ESAL) VALUES('S',5.0);
+ 
+ RESULT:
+ ````````
+ mysql> SELECT * FROM EMPLOYEE;
++-----+-------+------+
+| EID | ENAME | ESAL |
++-----+-------+------+
+|   1 | S     |    5 |
++-----+-------+------+
+1 row in set (0.18 sec)
+
+Note: Here Id can be Generated Automatically.
