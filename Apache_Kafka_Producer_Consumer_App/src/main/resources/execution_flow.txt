@@ -1,0 +1,42 @@
+
+1.Start the Zookeeper Service:
+------------------------------
+C:\softwares\kafka>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+2.Start the KafkaServer:
+------------------------
+C:\softwares\kafka>.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+3.Run the SpringBoot Starter:
+-----------------------------
+Enter Below URLS to access the services:
+`````````````````````````````````````````
+
+1.For Producer:
+----------------
+http://localhost:9898/kafka/send?message=DONE    [If API Annotates with @RequestParam]
+http://localhost:9898/kafka/send/DONE                 [If API Annotates with @PathVariable]
+
+2.For Consumer:
+---------------
+http://localhost:9898/kafka/consume
+
+
+**********If Any Error Related to the Kafka Connections**********
+
+delete some data from the Kafka Logs :
+---------------------------------------
+the directory is like:
+
+delete below directories:
+``````````````````````````
+C:\softwares\kafka\kafka-logs\__consumer_offsets-0
+C:\softwares\kafka\kafka-logs\__consumer_offsets-1
+...so on
+
+and
+
+All Topic Names
+
+
+
