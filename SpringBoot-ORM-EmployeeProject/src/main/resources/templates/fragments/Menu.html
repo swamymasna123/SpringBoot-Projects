@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+
+	<header class="header">
+		<nav class="navbar navbar-expand-lg navbar-light " style="background-color: black;">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" th:href="@{/emp-api/all}" style="margin-left: 20px;">EMPLOYEE PROJECT</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link text-white" th:href="@{/emp-api/register}">REGISTER</a>
+        <a class="nav-link text-white" th:href="@{/emp-api/all}">VIEW-ALL</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </div>
+    </div>
+  </div>
+</nav>
+	</header>
+	<!-- ----------- -->
+	<footer class="footer">
+		<p
+		style="bottom: 0%;position: absolute;width: 100%;height: 50px;text-align: center;
+		background-color: black;color: white;font-size: 20px;
+		"
+		>@All Rights Reserved By The Developers</p>
+	</footer>
+</body>
+</html>

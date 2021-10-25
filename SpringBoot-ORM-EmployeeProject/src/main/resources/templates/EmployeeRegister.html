@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+
+<div th:insert="/fragments/menu :: header" ></div>
+<div th:insert="/fragments/menu :: footer" ></div>
+
+	<div class="container"><hr/>
+		<div class="card col-md-4 offset-md-4 offset-md-4" style="background-color: black;color: white;">
+			<div class="card-body">
+		<h3 style="color: white; text-align: center;">EMPLOYEE REGISTER PAGE</h3><br/>
+				<form th:action="@{/emp-api/save}" method="POST" th:object="${employee}">
+
+					<!-- Employee NAME -->
+					<div class="row">
+					<div class="col-4">
+						<label>EMP-NAME</label>
+					</div>
+					<div class="col-8">
+						<input type="text" th:field="*{empName}" placeholder="Enter Employee Name" class="form-control"  style="background-color: black;color: white;"/>
+					</div>
+				</div>
+				<br/>
+				<!-- Employee SAL-->
+					<div class="row">
+					<div class="col-4">
+						<label>EMP-SAL</label>
+					</div>
+					<div class="col-8">
+						<input type="text" th:field="*{empSal}" placeholder="Enter Employee Salary" class="form-control"  style="background-color: black;color: white;"/>
+					</div>
+				</div>
+				<br/>
+				<!-- Employee Address-->
+					<div class="row">
+					<div class="col-4">
+						<label>EMP-ADDR</label>
+					</div>
+					<div class="col-8">
+					<textarea th:field="*{empAddress}" placeholder="Enter Employee Name" class="form-control" rows="" cols=""  style="background-color: black;color: white;"></textarea>
+					</div>
+				</div>
+				<br/>
+				<div style="text-align: center;">
+					<input type="submit" value="REGISTER" class="btn btn-primary"/>
+					<a th:href="@{/emp-api/all}" class="btn btn-danger" style="margin-left: 20px;">CANCEL</a>
+				</div>
+				
+				</form>
+			</div>
+		</div>
+		
+		<p th:text="${message}"
+			style="color: red; text-align: center; font-size: 23px;font-weight: bold;"></p>
+	</div>
+</body>
+</html>
