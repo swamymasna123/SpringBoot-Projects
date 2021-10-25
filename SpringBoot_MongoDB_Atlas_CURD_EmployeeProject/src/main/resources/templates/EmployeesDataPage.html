@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+
+<div th:insert="/fragments/menu :: header"></div>
+<div th:insert="/fragments/menu :: footer"></div>
+ 
+	<div class="container"><hr/>
+		<h2 style="text-align: center;color: blue;">WELCOME TO EMPLOYEES DATA PAGE</h2>
+		<table class="table table-bordered text-center table-hover" style="font-size: 22px;">
+			<tr style="background-color: indigo;color: white;">
+				<th>EMP-ID</th>
+				<th>EMP-NAME</th>
+				<th>EMP-SAL</th>
+				<th>EMP-ADDR</th>
+				<th colspan="3">LINK</th>
+				
+			</tr>
+
+			<tr th:each="ob:${list}">
+				<td th:text="${ob.id}"></td>
+				<td th:text="${ob.empName}"></td>
+				<td th:text="${ob.empSal}"></td>
+				<td th:text="${ob.empAddress}"></td>
+				<td>
+					<a th:href="@{/emp-api/delete/{id}(id=${ob.id})}" class="btn btn-danger">DELETE</a>
+				</td>
+				
+				<td>
+					<a th:href="@{/emp-api/edit/{id}(id=${ob.id})}" class="btn btn-primary">EDIT</a>
+				</td>
+				
+				<td>
+					<a th:href="@{/emp-api/view/{id}(id=${ob.id})}" class="btn btn-info">VIEW</a>
+				</td>
+			</tr>
+		</table>
+	<p th:text="${message}" style="font-size: 22px;text-align: center;color: red;"></p>		
+	</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+
+<div th:insert="/fragments/menu :: header"></div>
+<div th:insert="/fragments/menu :: footer"></div>
+
+	<div class="container">
+		<hr />
+
+		<div class="card col-md-4 offset-md-4 offset-md-4"
+			style="background-color: indigo; color: white;">
+			<div class="card-body">
+				<h3 style="text-align: center; color: white;">EMPLOYEE UPDATE
+					PAGE</h3>
+				<br />
+				<form th:action="@{/emp-api/update}" method="POST"
+					th:object="${employee}">
+
+					<!-- Emp Name -->
+					<div class="row">
+						<div class="col-4">
+							<label>EMP_ID</label>
+						</div>
+						<div class="col-8">
+							<input type="text" th:field="*{id}"
+								placeholder="Enter Employee Id" class="form-control" readonly="readonly"
+								style="background-color: silver; color: red;font-weight: bold;" />
+						</div>
+					</div>
+					<br />
+
+					<!-- Emp Name -->
+					<div class="row">
+						<div class="col-4">
+							<label>EMP_NAME</label>
+						</div>
+						<div class="col-8">
+							<input type="text" th:field="*{empName}"
+								placeholder="Enter Employee Name" class="form-control"
+								style="background-color: indigo; color: white;" />
+						</div>
+					</div>
+					<br />
+
+					<!-- Emp Sal -->
+					<div class="row">
+						<div class="col-4">
+							<label>EMP_SAL</label>
+						</div>
+						<div class="col-8">
+							<input type="text" th:field="*{empSal}"
+								placeholder="Enter Employee Salary" class="form-control"
+								style="background-color: indigo; color: white;" />
+						</div>
+					</div>
+					<br />
+
+					<!-- Emp Addr -->
+					<div class="row">
+						<div class="col-4">
+							<label>EMP_ADDR</label>
+						</div>
+						<div class="col-8">
+							<input type="text" th:field="*{empAddress}"
+								placeholder="Enter Employee Address" class="form-control"
+								style="background-color: indigo; color: white;" />
+						</div>
+					</div>
+					<br />
+
+					<div style="text-align: center;">
+						<input type="submit" value="UPDATE" class="btn btn-primary" />
+						<a th:href="@{/emp-api/all}" class="btn btn-danger"
+							style="margin-left: 20px;">CANCEL</a>
+					</div>
+				</form>
+			</div>
+		</div>
+
+
+		<p th:text="${message}" style="font-size: 22px; text-align: center;"></p>
+
+	</div>
+</body>
+</html>

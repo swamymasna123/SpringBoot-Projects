@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+
+<div th:insert="/fragments/menu :: header"></div>
+<div th:insert="/fragments/menu :: footer"></div>
+
+	<div class="container">
+		<hr />
+		<h3 style="text-align: center; color: blue;">EMPLOYEE VIEW PAGE</h3>
+		<div class="card col-md-4 offset-md-4 offset-md-4" style="border-color: darkgreen;background-color: green;">
+			<div class="card-body">
+			<h4>ID:  <span th:text="${ob.id}" ></span></h4>
+		<table class="table table-bordered text-center table-hover"
+			style="font-size: 22px;color: white;background-color: darkgreen;">
+			<!-- <tr>
+				<th>EMP-ID</th>
+				<td th:text="${ob.id}"></td>
+			</tr>
+ -->
+			<tr>
+				<th>EMP-NAME</th>
+				<td th:text="${ob.empName}"></td>
+			</tr>
+
+			<tr>
+				<th>EMP-SAL</th>
+				<td th:text="${ob.empSal}"></td>
+			</tr>
+
+			<tr>
+				<th>EMP-ADDR</th>
+				<td th:text="${ob.empAddress}"></td>
+			</tr>
+
+		</table>
+		</div>
+		</div>
+		<p th:text="${message}"
+			style="font-size: 22px; text-align: center; color: red;"></p>
+	</div>
+</body>
+</html>

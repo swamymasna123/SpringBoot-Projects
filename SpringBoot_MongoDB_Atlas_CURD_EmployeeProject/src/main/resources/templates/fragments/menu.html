@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:fragment="header">
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: black;color: white;">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" th:href="@{/emp-api/all}">EMPLOYEE PROJECT</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link text-white" th:href="@{/emp-api/register}">REGISTER</a>
+        <a class="nav-link text-white" th:href="@{/emp-api/all}">VIEW-ALL</a>
+      </div>
+    </div>
+  </div>
+</nav>
+	</header>
+	
+	<footer th:fragment="footer">
+		<p
+		style="bottom: 0%;position: absolute;text-align: center;background-color: black;
+		font-size: 22px;color: white;width: 100%;height: 50px;"
+		>@All Rights Resereved By the Developers</p>
+	</footer>
+</body>
+</html>
