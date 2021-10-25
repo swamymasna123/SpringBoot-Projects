@@ -1,0 +1,18 @@
+
+CREATE TABLE PRODUCTS (
+PID INT PRIMARY KEY AUTO_INCREMENT,
+PNAME VARCHAR(200),
+PCOST DOUBLE,
+PDESC VARCHAR(200)
+);
+
+mysql> DESC PRODUCTS;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| PID   | int          | NO   | PRI | NULL    | auto_increment |
+| PNAME | varchar(200) | YES  |     | NULL    |                |
+| PCOST | double       | YES  |     | NULL    |                |
+| PDESC | varchar(200) | YES  |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
